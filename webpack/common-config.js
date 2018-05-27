@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const WebpackChunkHash = require('webpack-chunk-hash');
 
 module.exports = ({ 
   entry = "./src/index.tsx",
@@ -8,10 +9,13 @@ module.exports = ({
   template = './src/index.pug'
 } = {}) => ({
   // entry of project
-  entry,
+  entry: {
+      app: [entry],
+  },
   output: {
-      filename: '[name].[hash].js',
-      path: output,
+    filename: "[name].[hash].js",
+    chunkFilename: "[name].[chunkhash].js",
+    path: output,
   },
   resolve: {
     extensions: ['.js', '.json', '.ts', '.tsx'],
@@ -36,6 +40,7 @@ module.exports = ({
   // after resolve https://github.com/asfktz/autodll-webpack-plugin/pull/106
   // this part of chunk vendor will be replaced by dll plugin  
   optimization: {
+    namedModules: true,
     splitChunks: {
         chunks: "all",
         minSize: 30000,
@@ -51,7 +56,7 @@ module.exports = ({
             }
         }
     },
-    runtimeChunk: true,
+    runtimeChunk: 'single',
   },
   plugins: [
       new HtmlWebpackPlugin({
@@ -60,7 +65,6 @@ module.exports = ({
           inject: 'body',
       }),
       new webpack.NamedModulesPlugin(),
-
       new webpack.HashedModuleIdsPlugin(),
   ]
 });

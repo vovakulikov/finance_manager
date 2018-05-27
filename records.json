@@ -1,0 +1,65 @@
+{
+  "html-webpack-plugin for \"index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {},
+        "bySource": {},
+        "usedIds": [
+          1
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js!src/index.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "css node_modules/css-loader/index.js!src/index.css 0": 0,
+      "multi react react-dom": 1,
+      "multi src/index.tsx": 2
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    }
+  },
+  "chunks": {
+    "byName": {
+      "manifest": 0,
+      "vendors": 1,
+      "main": 2,
+      "runtime~main": 3,
+      "runtime~vendor": 0,
+      "runtime~app": 2,
+      "vendor": 4,
+      "app": 5,
+      "runtime": 0
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      5
+    ]
+  }
+}
