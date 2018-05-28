@@ -5,6 +5,7 @@
     "comment-format": [true, "check-space"],
     "indent": [true, "spaces"],
     "one-line": [true, "check-open-brace", "check-whitespace"],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
     "no-var-keyword": true,
     "quotemark": [true, "single", "avoid-escape"],
     "semicolon": [true, "always"],

@@ -1,6 +1,6 @@
 
-const devConfig = require('./webpack.config.dev');
-const prodConfig = require('./webpack.config.prod');
+const devConfig = require('./webpack.dev');
+const prodConfig = require('./webpack.prod');
 
 module.exports = (env) => {
     switch (env) {

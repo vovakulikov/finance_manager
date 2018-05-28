@@ -1,5 +1,6 @@
 module.exports = {
   verbose: true,
+  bail: true,
   transform: {
     "^.+\\.tsx?$": "ts-jest"
   },
